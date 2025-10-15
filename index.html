@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>웹캠 핀치-드래그 그리드 게임</title>
+    <link rel="stylesheet" href="style.css" />
+    <!-- MediaPipe Hands and drawing utils -->
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils/drawing_utils.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands/hands.js" crossorigin="anonymous"></script>
+</head>
+<body class="back">
+    <div class="wrap">
+    <h1>웹캠으로 조작하는 그리드 조각 맞추기</h1>
+    <p>그리드 수를 설정한 뒤, 3초 동안 보여지는 위치를 기억하고 <br>손가락으로 집어 원래 자리로 옮겨보세요.</p>
+    <div class="controls">
+        <label>그리드 수 : </label>
+        <input id="gridSize" type="number" min="2" max="20" value="10"/>
+        <button id="startBtn" class="btn">시작</button>
+        <button id="completeBtn" class="btn">완성</button>
+        <span id="timer"></span>
+    </div>
+    <div class="stage">
+        <video id="webcam" playsinline></video>
+        <canvas id="gameCanvas" width="640" height="480"></canvas>
+        <canvas id="overlay" width="640" height="480"></canvas>
+    </div>
+    <script src=".js" defer></script>
+    </div>
+</body>
+</html>
